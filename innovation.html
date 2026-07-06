@@ -26,6 +26,13 @@
     }
     .badge::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); box-shadow:0 0 0 3px rgba(10,87,216,0.14); }
     .badge--red::before { background:var(--red); box-shadow:0 0 0 3px rgba(166,50,31,0.14); }
+    .badge--live { border-color:var(--blue); background:rgba(10,87,216,0.06); color:var(--blue); }
+    .badge--live::before { background:var(--blue); animation:pulse 1.9s ease-in-out infinite; }
+    @keyframes pulse {
+      0%   { box-shadow:0 0 0 0 rgba(10,87,216,0.45); }
+      70%  { box-shadow:0 0 0 7px rgba(10,87,216,0); }
+      100% { box-shadow:0 0 0 0 rgba(10,87,216,0); }
+    }
 
     .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
     .metric { background:var(--paper); padding:34px 30px; }
@@ -131,6 +138,7 @@
 
       <!-- IP badges -->
       <div class="badges animate-up" style="grid-column:1 / span 7;margin-top:52px;animation-delay:.4s">
+        <span class="badge badge--live">Prototype — Build &amp; Testing Underway</span>
         <span class="badge">Patent Pending · Provisional Filed Jun 2026</span>
         <span class="badge badge--red">Design Registration Filed — 2026</span>
         <span class="badge">International Roadmap · PCT / Hague</span>
@@ -206,6 +214,7 @@
         <div class="metric"><div class="metric__num">0</div><div class="metric__label">Exposed rotating blades — safer, guard-free airflow</div></div>
         <div class="metric"><div class="metric__num">Smart</div><div class="metric__label">PMBus / I²C telemetry for baseboard-controller integration</div></div>
       </div>
+      <p style="margin:26px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--muted)">▸ A working prototype has been built and is now undergoing bench testing to validate these targets.</p>
     </section>
 
     <!-- 04 IP position -->
