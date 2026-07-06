@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hubless Rim-Driven Cooling Fan — Deep-Tech · Auriel Systems</title>
-  <meta name="description" content="A patent-pending, design-protected hubless rim-driven axial cooling fan — engineered for high-density data-centre and avionics thermal management. Higher efficiency, no wear, no exposed blades.">
-  <link rel="canonical" href="https://auriel.systems/innovation.html">
-  <meta property="og:title" content="Hubless Rim-Driven Cooling Fan — Auriel Systems">
+  <title>Vande Bharatam — Hubless Rim-Driven Cooling Fan · Auriel Systems</title>
+  <meta name="description" content="Auriel Systems' Vande Bharatam entry: a patent-pending, design-protected hubless rim-driven axial cooling fan — engineered for high-density data-centre and avionics thermal management. Higher efficiency, no wear, no exposed blades.">
+  <link rel="canonical" href="https://auriel.systems/vandebharatam">
+  <meta property="og:title" content="Vande Bharatam — Hubless Rim-Driven Cooling Fan · Auriel Systems">
   <meta property="og:description" content="Patent-pending deep-tech: a hubless, contactless cooling fan for the data centres and aircraft of the next decade.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://auriel.systems/innovation.html">
+  <meta property="og:url" content="https://auriel.systems/vandebharatam">
   <meta name="theme-color" content="#F4F1E8">
   <link rel="icon" type="image/png" href="assets/auriel-logo-transparent.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,21 @@
     .use-card p { margin:0; font-size:14.5px; line-height:1.66; color:var(--muted); }
     .use-card .tag { font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; display:block; }
 
+    /* development roadmap stepper */
+    .roadmap { display:grid; grid-template-columns:repeat(5,1fr); }
+    .stage { position:relative; text-align:center; padding:34px 14px 0; }
+    .stage::before { content:""; position:absolute; top:6px; left:0; right:0; height:1px; background:var(--line-2); }
+    .stage:first-child::before { left:50%; }
+    .stage:last-child::before { right:50%; }
+    .stage__node { position:absolute; top:0; left:50%; transform:translateX(-50%); width:13px; height:13px; border-radius:50%; background:var(--paper); border:1.5px solid var(--line-2); z-index:1; }
+    .stage--done .stage__node { background:var(--blue); border-color:var(--blue); }
+    .stage--now .stage__node { border-color:var(--blue); background:var(--paper); box-shadow:0 0 0 4px rgba(10,87,216,0.16); animation:pulse 1.9s ease-in-out infinite; }
+    .stage__yr { font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+    .stage__name { font-family:var(--serif); font-size:18px; letter-spacing:-0.01em; margin:8px 0 6px; }
+    .stage--now .stage__name { color:var(--blue); }
+    .stage--future .stage__name, .stage--future .stage__yr { color:var(--muted); }
+    .stage__sub { font-size:12.5px; line-height:1.5; color:var(--muted); }
+
     .hero-fan { grid-column:8 / span 5; grid-row:2 / span 3; align-self:center; }
     @media (max-width:1100px){ .hero-fan{ grid-column:5 / span 8; grid-row:auto; margin-top:52px; } }
     @media (max-width:760px){
@@ -59,6 +74,14 @@
       .pillars{ grid-template-columns:1fr; gap:34px; }
       .split{ grid-template-columns:1fr; gap:30px; }
       .hero-fan{ margin-top:40px; max-width:380px; }
+      /* roadmap becomes a vertical timeline */
+      .roadmap{ grid-template-columns:1fr; }
+      .stage{ text-align:left; padding:0 0 30px 30px; }
+      .stage::before{ top:0; bottom:0; left:6px; right:auto; width:1px; height:auto; }
+      .stage:first-child::before{ top:6px; left:6px; }
+      .stage:last-child::before{ display:none; }
+      .stage__node{ top:0; left:0; transform:none; }
+      .stage__name{ margin:3px 0 5px; }
     }
   </style>
 </head>
@@ -75,7 +98,7 @@
     </button>
     <nav class="nav__links">
       <a class="nav__link" href="founder.html">Founder</a>
-      <a class="nav__link is-active" href="innovation.html">Innovation</a>
+      <a class="nav__link is-active" href="vandebharatam.html">Vande Bharatam</a>
       <a class="nav__link" href="products.html">Products</a>
       <a class="nav__link" href="contact.html">Contact</a>
     </nav>
@@ -240,10 +263,53 @@
       </div>
     </section>
 
-    <!-- 05 Origins -->
+    <!-- 05 Roadmap -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:56px">
+        <div class="col-3"><span class="eyebrow">Fig. 05 — Roadmap</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">From research to production — and we're building now.</h2>
+          <p class="body">A clear line from a university thesis to hardware in test, and on to pilots and manufacturing at scale.</p>
+        </div>
+      </div>
+      <div class="roadmap">
+        <div class="stage stage--done">
+          <span class="stage__node"></span>
+          <div class="stage__yr">2016–18</div>
+          <div class="stage__name">Research</div>
+          <div class="stage__sub">TU Munich master's thesis — the CFD foundations of the design</div>
+        </div>
+        <div class="stage stage--done">
+          <span class="stage__node"></span>
+          <div class="stage__yr">Jun 2026</div>
+          <div class="stage__name">IP Filed</div>
+          <div class="stage__sub">Provisional patent + design registration filed; priority secured</div>
+        </div>
+        <div class="stage stage--now">
+          <span class="stage__node"></span>
+          <div class="stage__yr">Now</div>
+          <div class="stage__name">Prototype &amp; Testing</div>
+          <div class="stage__sub">Working prototype built; bench testing underway</div>
+        </div>
+        <div class="stage stage--future">
+          <span class="stage__node"></span>
+          <div class="stage__yr">Next</div>
+          <div class="stage__name">Pilot</div>
+          <div class="stage__sub">Field pilots with data-centre &amp; aerospace partners</div>
+        </div>
+        <div class="stage stage--future">
+          <span class="stage__node"></span>
+          <div class="stage__yr">Scale</div>
+          <div class="stage__name">Production</div>
+          <div class="stage__sub">Design-for-manufacture and volume deployment</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Origins -->
     <section class="section section--alt">
       <div class="grid12">
-        <div class="col-3"><span class="eyebrow">Fig. 05 — Origins</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 06 — Origins</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">From a master's thesis at TU Munich to a filed patent.</h2>
           <p class="body" style="margin-bottom:24px">The aerodynamic foundations of this platform were laid during a master's thesis at the <strong style="color:var(--ink);font-weight:500">Technical University of Munich</strong>, in a joint programme with Nanyang Technological University, Singapore. Computational fluid-dynamics research into the cooling efficiency of axial fans first demonstrated the gains that the hubless rim-driven design now embodies in hardware.</p>
@@ -255,7 +321,7 @@
     <!-- 06 Strategic fit -->
     <section class="section">
       <div class="grid12" style="margin-bottom:52px">
-        <div class="col-3"><span class="eyebrow">Fig. 06 — Strategic Fit</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 07 — Strategic Fit</span></div>
         <div class="col-4-8">
           <h2 class="h2" style="margin-bottom:22px">A perfect fit for where the Adani Group is already building.</h2>
           <p class="body">This is deep-tech engineered in Gujarat, for the infrastructure India is scaling now — aligning directly with three of the Group's strategic frontiers.</p>
@@ -283,7 +349,7 @@
     <!-- 07 Beyond the rack -->
     <section class="section section--alt">
       <div class="grid12" style="margin-bottom:48px">
-        <div class="col-3"><span class="eyebrow">Fig. 07 — The Platform</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 08 — The Platform</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">One core technology. Many mission-critical markets.</h2>
           <p class="body">The hubless rim-driven core is a platform, not a single product. Wherever heat, reliability, and space collide, it applies.</p>
@@ -333,7 +399,7 @@
     <div class="footer__col footer__col--company">
       <div class="footer__heading">Company</div>
       <a class="footer__link" href="founder.html">Founder</a>
-      <a class="footer__link" href="innovation.html">Innovation</a>
+      <a class="footer__link" href="vandebharatam.html">Vande Bharatam</a>
       <a class="footer__link" href="products.html">Products</a>
       <a class="footer__link" href="contact.html">Contact</a>
     </div>
