@@ -33,6 +33,9 @@
     }
     .badge::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); box-shadow:0 0 0 3px rgba(10,87,216,0.14); }
     .badge--red::before { background:var(--red); box-shadow:0 0 0 3px rgba(166,50,31,0.14); }
+    .entrant-bar { position:relative; z-index:1; display:flex; justify-content:center; align-items:center; gap:11px; text-align:center; background:rgba(10,87,216,0.07); border-bottom:1px solid var(--line); padding:13px 24px; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); }
+    .entrant-bar::before { content:"★"; font-size:11px; line-height:1; }
+    @media (max-width:600px){ .entrant-bar{ font-size:9.5px; letter-spacing:0.08em; line-height:1.5; } }
     .badge--live { border-color:var(--blue); background:rgba(10,87,216,0.06); color:var(--blue); }
     .badge--live::before { background:var(--blue); animation:pulse 1.9s ease-in-out infinite; }
     @keyframes pulse {
@@ -111,13 +114,15 @@
     </nav>
   </header>
 
+  <div class="entrant-bar">Official Entrant · Vande Bharatam Initiative by Shri Gautam Adani</div>
+
   <main class="wrap">
 
     <!-- Hero -->
     <section class="section hero grid12">
       <div class="eyebrow eyebrow--blue animate-up" style="animation-delay:.05s">Deep-Tech · Thermal Systems · Fig. 00</div>
       <h1 class="display animate-up" style="grid-column:1 / span 7;font-size:clamp(40px,5.4vw,86px);animation-delay:.12s">The hubless fan reinventing how the world stays <span class="em">cool.</span></h1>
-      <p class="lead animate-up" style="grid-column:1 / span 5;animation-delay:.22s">A patent-pending, design-protected rim-driven cooling fan — no hub, no shaft, no wear. Engineered for the AI data centres and aircraft of the next decade.</p>
+      <p class="lead animate-up" style="grid-column:1 / span 5;animation-delay:.22s">A patent-pending, design-protected rim-driven cooling fan — no hub, no shaft, no wear — with the potential to cut cooling-energy cost by up to <strong style="color:var(--ink);font-weight:600">50%</strong>. Engineered for the AI data centres and aircraft of the next decade.</p>
 
       <!-- Hubless rim-driven fan — technical diagram -->
       <div class="hero-fan animate-up" style="animation-delay:.3s" aria-hidden="true">
@@ -245,6 +250,13 @@
         <div class="metric"><div class="metric__num">Smart</div><div class="metric__label">PMBus / I²C telemetry for baseboard-controller integration</div></div>
       </div>
       <p style="margin:26px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--muted)">▸ A working prototype has been built and is now undergoing bench testing to validate these targets.</p>
+    </section>
+
+    <!-- Impact — energy -->
+    <section class="section section--alt" style="text-align:center;padding-top:120px;padding-bottom:120px">
+      <span class="eyebrow eyebrow--blue" style="justify-content:center;margin-bottom:30px">The Prize — Energy</span>
+      <div style="font-family:var(--serif);font-weight:400;color:var(--blue);font-size:clamp(78px,13vw,168px);line-height:0.88;letter-spacing:-0.03em">~50%</div>
+      <p style="max-width:660px;margin:28px auto 0;font-size:clamp(18px,1.4vw,21px);line-height:1.55;color:var(--ink-soft)">Potential reduction in cooling-energy cost — the compounding prize of eliminating hub blockage, tip-leakage, and bearing drag, multiplied across every rack at data-centre scale.</p>
     </section>
 
     <!-- 04 IP position -->
