@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hubless Rim-Driven Cooling Fan — Deep-Tech · Auriel Systems</title>
+  <meta name="description" content="A patent-pending, design-protected hubless rim-driven axial cooling fan — engineered for high-density data-centre and avionics thermal management. Higher efficiency, no wear, no exposed blades.">
+  <link rel="canonical" href="https://auriel.systems/innovation.html">
+  <meta property="og:title" content="Hubless Rim-Driven Cooling Fan — Auriel Systems">
+  <meta property="og:description" content="Patent-pending deep-tech: a hubless, contactless cooling fan for the data centres and aircraft of the next decade.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://auriel.systems/innovation.html">
+  <meta name="theme-color" content="#F4F1E8">
+  <link rel="icon" type="image/png" href="assets/auriel-logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* page-specific: IP badges, metric grid, pillars */
+    .badges { display:flex; flex-wrap:wrap; gap:14px; }
+    .badge {
+      display:inline-flex; align-items:center; gap:9px;
+      font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--ink); border:1px solid var(--line-2); padding:9px 14px; background:rgba(255,255,255,0.35);
+    }
+    .badge::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); box-shadow:0 0 0 3px rgba(10,87,216,0.14); }
+    .badge--red::before { background:var(--red); box-shadow:0 0 0 3px rgba(166,50,31,0.14); }
+
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .metric { background:var(--paper); padding:34px 30px; }
+    .metric__num { font-family:var(--serif); font-size:clamp(34px,3.6vw,50px); line-height:1; letter-spacing:-0.02em; color:var(--blue); }
+    .metric__num .u { font-size:0.42em; color:var(--muted); letter-spacing:0; margin-left:4px; }
+    .metric__label { margin-top:14px; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); line-height:1.55; }
+
+    .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+    .pillar { border-top:1px solid var(--ink); padding-top:22px; }
+    .pillar__no { font-family:var(--mono); font-size:12px; color:var(--blue); margin-bottom:16px; }
+    .pillar h3 { font-size:22px; margin-bottom:12px; letter-spacing:-0.01em; }
+    .pillar p { margin:0; font-size:14.5px; line-height:1.66; color:var(--muted); }
+
+    .split { display:grid; grid-template-columns:repeat(2,1fr); gap:40px; }
+    .use-card { border-top:1px solid var(--line); padding-top:22px; }
+    .use-card h3 { font-size:20px; margin-bottom:10px; letter-spacing:-0.01em; }
+    .use-card p { margin:0; font-size:14.5px; line-height:1.66; color:var(--muted); }
+    .use-card .tag { font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; display:block; }
+
+    .hero-fan { grid-column:8 / span 5; grid-row:2 / span 3; align-self:center; }
+    @media (max-width:1100px){ .hero-fan{ grid-column:5 / span 8; grid-row:auto; margin-top:52px; } }
+    @media (max-width:760px){
+      .metrics{ grid-template-columns:1fr 1fr; }
+      .pillars{ grid-template-columns:1fr; gap:34px; }
+      .split{ grid-template-columns:1fr; gap:30px; }
+      .hero-fan{ margin-top:40px; max-width:380px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bp-grid" aria-hidden="true"></div>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" aria-label="Auriel Systems — home">
+      <img class="nav__logo" src="assets/auriel-logo-transparent.png" alt="Auriel Systems">
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links">
+      <a class="nav__link" href="founder.html">Founder</a>
+      <a class="nav__link is-active" href="innovation.html">Innovation</a>
+      <a class="nav__link" href="products.html">Products</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Hero -->
+    <section class="section hero grid12">
+      <div class="eyebrow eyebrow--blue animate-up" style="animation-delay:.05s">Deep-Tech · Thermal Systems · Fig. 00</div>
+      <h1 class="display animate-up" style="grid-column:1 / span 7;font-size:clamp(40px,5.4vw,86px);animation-delay:.12s">The hubless fan reinventing how the world stays <span class="em">cool.</span></h1>
+      <p class="lead animate-up" style="grid-column:1 / span 5;animation-delay:.22s">A patent-pending, design-protected rim-driven cooling fan — no hub, no shaft, no wear. Engineered for the AI data centres and aircraft of the next decade.</p>
+
+      <!-- Hubless rim-driven fan — technical diagram -->
+      <div class="hero-fan animate-up" style="animation-delay:.3s" aria-hidden="true">
+        <svg class="instrument" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- square venturi housing -->
+          <rect class="draw" style="--len:1300" x="44" y="44" width="312" height="312" rx="18" fill="none" stroke="#16150F" stroke-width="1.1"/>
+          <!-- corner mounting holes -->
+          <g fill="none" stroke="#736F62" stroke-width="0.9">
+            <circle cx="74" cy="74" r="9"/><circle cx="326" cy="74" r="9"/>
+            <circle cx="74" cy="326" r="9"/><circle cx="326" cy="326" r="9"/>
+          </g>
+          <!-- venturi bore + rim -->
+          <circle class="draw" style="--len:940" cx="200" cy="200" r="149" fill="none" stroke="#16150F" stroke-width="1"/>
+          <circle cx="200" cy="200" r="146" fill="none" stroke="#736F62" stroke-width="0.7" stroke-dasharray="2 3"/>
+          <circle cx="200" cy="200" r="132" fill="none" stroke="#16150F" stroke-width="1"/>
+          <!-- centre crosshair (open core) -->
+          <line x1="200" y1="70" x2="200" y2="330" stroke="#736F62" stroke-width="0.5" stroke-dasharray="2 4"/>
+          <line x1="70" y1="200" x2="330" y2="200" stroke="#736F62" stroke-width="0.5" stroke-dasharray="2 4"/>
+
+          <!-- rotating rim-driven impeller: 9 backward-swept blades cantilevered inward -->
+          <g class="blades">
+            <g fill="#0A57D8" fill-opacity="0.08" stroke="#0A57D8" stroke-width="1" stroke-linejoin="round">
+              <g id="bl9"><path d="M330,188 C286,182 250,190 250,232 C262,206 292,202 328,206 Z"/></g>
+              <use href="#bl9" transform="rotate(40 200 200)"/>
+              <use href="#bl9" transform="rotate(80 200 200)"/>
+              <use href="#bl9" transform="rotate(120 200 200)"/>
+              <use href="#bl9" transform="rotate(160 200 200)"/>
+              <use href="#bl9" transform="rotate(200 200 200)"/>
+              <use href="#bl9" transform="rotate(240 200 200)"/>
+              <use href="#bl9" transform="rotate(280 200 200)"/>
+              <use href="#bl9" transform="rotate(320 200 200)"/>
+            </g>
+          </g>
+
+          <!-- open central void ring -->
+          <circle cx="200" cy="200" r="46" fill="none" stroke="#736F62" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+          <!-- annotations (non-proprietary) -->
+          <g stroke="#16150F" stroke-width="0.7">
+            <line x1="44" y1="374" x2="356" y2="374"/>
+            <line x1="44" y1="369" x2="44" y2="379"/><line x1="356" y1="369" x2="356" y2="379"/>
+          </g>
+          <text x="200" y="390" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#736F62" letter-spacing="1">80 MM — SERVER-STANDARD ENVELOPE</text>
+          <text x="200" y="204" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#736F62" letter-spacing="0.5">OPEN CORE</text>
+          <text x="58" y="34" font-family="IBM Plex Mono, monospace" font-size="9" fill="#736F62" letter-spacing="1">HUBLESS RDF — FIG. 02 · INLET</text>
+        </svg>
+      </div>
+
+      <!-- IP badges -->
+      <div class="badges animate-up" style="grid-column:1 / span 7;margin-top:52px;animation-delay:.4s">
+        <span class="badge">Patent Pending — India, 2026</span>
+        <span class="badge badge--red">Design Registration Filed — 2026</span>
+        <span class="badge">International Roadmap · PCT / Hague</span>
+      </div>
+    </section>
+
+    <!-- 01 The problem -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:52px">
+        <div class="col-3"><span class="eyebrow">Fig. 01 — The Problem</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">The AI era is heating up faster than we can cool it.</h2>
+          <p class="body">Every GPU rack, every accelerator, every server blade is throttled by one thing: heat. Yet the fans that cool them have barely changed in decades — a bladed impeller bolted to a central hub, spinning on a bearing that wears out. That legacy design wastes energy in three ways, and every one of them compounds at data-centre scale.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar" style="border-top-color:var(--line)">
+          <div class="pillar__no">Loss 01</div>
+          <h3>The hub blocks the air</h3>
+          <p>A central hub obstructs up to a quarter of the inlet area — dead space that produces no flow, only drag and turbulence.</p>
+        </div>
+        <div class="pillar" style="border-top-color:var(--line)">
+          <div class="pillar__no">Loss 02</div>
+          <h3>Blade tips leak</h3>
+          <p>The gap between spinning blade tips and the casing bleeds pressure, creating vortices, tonal noise, and lost efficiency.</p>
+        </div>
+        <div class="pillar" style="border-top-color:var(--line)">
+          <div class="pillar__no">Loss 03</div>
+          <h3>Bearings wear out</h3>
+          <p>Contact bearings degrade under continuous duty, capping fan life and forcing maintenance in always-on facilities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 The breakthrough -->
+    <section class="section section--alt">
+      <div class="grid12" style="margin-bottom:56px">
+        <div class="col-3"><span class="eyebrow">Fig. 02 — The Breakthrough</span></div>
+        <div class="col-4-8">
+          <h2 class="h2" style="margin-bottom:0">We removed the hub. Then the shaft. Then the wear.</h2>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar__no">01</div>
+          <h3>Hubless open core</h3>
+          <p>The blades are driven from the <em>outer rim</em> inward, leaving the centre completely open. No hub, no shaft, no boss — just clear, unobstructed airflow across the entire aperture.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__no">02</div>
+          <h3>Rim-integrated blades</h3>
+          <p>Each blade is structurally continuous with the surrounding rim, sealing the tip gap that leaks pressure in conventional fans — and quietening the fan at the source.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__no">03</div>
+          <h3>Contactless suspension</h3>
+          <p>A self-acting air-film bearing suspends the rotor with no physical contact — nothing to wear, nothing to lubricate, engineered for continuous-duty life far beyond contact-bearing fans.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Performance -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:52px">
+        <div class="col-3"><span class="eyebrow">Fig. 03 — Engineered Targets</span></div>
+        <h2 class="h2-sm col-4-8">Built to a standard slot. Tuned for a new benchmark.</h2>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="metric__num">80<span class="u">mm</span></div><div class="metric__label">Drop-in server-standard envelope — no rack redesign</div></div>
+        <div class="metric"><div class="metric__num">≥500<span class="u">Pa</span></div><div class="metric__label">Static pressure for dense GPU &amp; accelerator racks</div></div>
+        <div class="metric"><div class="metric__num">≥45<span class="u">%</span></div><div class="metric__label">Total-to-static efficiency — a step above legacy hubbed fans</div></div>
+        <div class="metric"><div class="metric__num">70k<span class="u">hrs+</span></div><div class="metric__label">Contactless, maintenance-free continuous-duty life</div></div>
+        <div class="metric"><div class="metric__num">0</div><div class="metric__label">Exposed rotating blades — safer, guard-free airflow</div></div>
+        <div class="metric"><div class="metric__num">Smart</div><div class="metric__label">PMBus / I²C telemetry for baseboard-controller integration</div></div>
+      </div>
+    </section>
+
+    <!-- 04 IP position -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:44px">
+        <div class="col-3"><span class="eyebrow">Fig. 04 — Protected Innovation</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">Defensible from day one.</h2>
+          <p class="body">The invention is protected on two fronts, filed at the Indian Patent Office and CGPDTM in June 2026 — securing an international priority date, with a clear roadmap to global coverage. Full technical specifications are held confidential.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="use-card" style="border-top-color:var(--ink)">
+          <span class="tag">Utility — Patent Pending</span>
+          <h3>The mechanism</h3>
+          <p>A provisional patent covering the hubless rim-driven architecture, the rim-integrated blade system, and the contactless air-film bearing. Priority secured; complete specification and PCT international filing on the roadmap.</p>
+        </div>
+        <div class="use-card" style="border-top-color:var(--ink)">
+          <span class="tag">Design — Registration Filed</span>
+          <h3>The form</h3>
+          <p>A registered-design application protecting the distinctive hubless, open-core pinwheel appearance of the article, with a Hague / US / EU international filing window on the roadmap.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Origins -->
+    <section class="section section--alt">
+      <div class="grid12">
+        <div class="col-3"><span class="eyebrow">Fig. 05 — Origins</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">From a master's thesis at TU Munich to a filed patent.</h2>
+          <p class="body" style="margin-bottom:24px">The aerodynamic foundations of this platform were laid during a master's thesis at the <strong style="color:var(--ink);font-weight:500">Technical University of Munich</strong>, in a joint programme with Nanyang Technological University, Singapore. Computational fluid-dynamics research into the cooling efficiency of axial fans first demonstrated the gains that the hubless rim-driven design now embodies in hardware.</p>
+          <p class="body">It is the through-line of an aerospace engineer's career — from structural stress analysis on the Airbus A321neo and fluid-dynamics work at Dyson, to a cooling architecture built for the machines that run modern intelligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Strategic fit -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:52px">
+        <div class="col-3"><span class="eyebrow">Fig. 06 — Strategic Fit</span></div>
+        <div class="col-4-8">
+          <h2 class="h2" style="margin-bottom:22px">A perfect fit for where the Adani Group is already building.</h2>
+          <p class="body">This is deep-tech engineered in Gujarat, for the infrastructure India is scaling now — aligning directly with three of the Group's strategic frontiers.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar__no">→ 01</div>
+          <h3>Hyperscale data centres</h3>
+          <p>AdaniConneX is building gigawatts of green data-centre capacity across India. Cooling is among the largest energy loads in any facility — a more efficient fan directly lowers PUE, energy cost, and carbon, reinforcing the Group's net-zero commitments.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__no">→ 02</div>
+          <h3>Defence &amp; aerospace</h3>
+          <p>The same contactless, wear-free, high-pressure architecture is tailor-made for avionics and aerospace thermal management — a natural adjacency to Adani Defence &amp; Aerospace, where reliability and weight are decisive.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__no">→ 03</div>
+          <h3>Semiconductors &amp; Make in India</h3>
+          <p>As India builds indigenous chip and electronics capability, high-performance cooling is a strategic import today. This platform is an Atmanirbhar answer — designed, protected, and buildable at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Beyond the rack -->
+    <section class="section section--alt">
+      <div class="grid12" style="margin-bottom:48px">
+        <div class="col-3"><span class="eyebrow">Fig. 07 — The Platform</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">One core technology. Many mission-critical markets.</h2>
+          <p class="body">The hubless rim-driven core is a platform, not a single product. Wherever heat, reliability, and space collide, it applies.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="use-card">
+          <span class="tag">Aerospace</span>
+          <h3>Avionics cooling</h3>
+          <p>Contactless bearings and enclosed blades mean no wear and no foreign-object hazard — critical for airborne electronics where a failed fan is a grounded aircraft.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Data centre</span>
+          <h3>AI &amp; GPU racks</h3>
+          <p>High static pressure in a standard 80 mm slot, with smart telemetry — a drop-in upgrade for the densest compute on earth.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Edge &amp; telecom</span>
+          <h3>Sealed, remote sites</h3>
+          <p>Maintenance-free life suits unattended edge nodes, 5G radios, and industrial cabinets where a service call is expensive.</p>
+        </div>
+        <div class="use-card">
+          <span class="tag">Power electronics</span>
+          <h3>EV &amp; energy systems</h3>
+          <p>Compact, efficient forced convection for inverters, chargers, and battery systems across the electrification stack.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--bare grid12" style="padding-top:150px;padding-bottom:150px">
+      <div class="col-3"><span class="eyebrow eyebrow--blue">Partner with us</span></div>
+      <div class="col-4-8">
+        <h2 class="cta-huge">Let's cool what comes next — together.</h2>
+        <p class="body" style="margin:0 0 40px">For partnership, pilot, and investment enquiries on the hubless rim-driven cooling platform.</p>
+        <a class="link-underline" href="contact.html"><span class="lu-line"></span>Start a conversation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <img src="assets/auriel-logo-transparent.png" alt="Auriel Systems">
+      <p>Engineering the infrastructure of intelligent systems.</p>
+    </div>
+    <div class="footer__col footer__col--company">
+      <div class="footer__heading">Company</div>
+      <a class="footer__link" href="founder.html">Founder</a>
+      <a class="footer__link" href="innovation.html">Innovation</a>
+      <a class="footer__link" href="products.html">Products</a>
+      <a class="footer__link" href="contact.html">Contact</a>
+    </div>
+    <div class="footer__col footer__col--sisters">
+      <div class="footer__heading">Sister Companies</div>
+      <a class="footer__sister" href="https://valik.in" target="_blank" rel="noopener">
+        <img src="assets/valik-logo.png" alt="Valik"><span>valik.in</span>
+      </a>
+      <div class="footer__sister">
+        <img src="assets/auriel-kids-logo.png" alt="Auriel Kids">
+        <a href="https://auriel.co.in" target="_blank" rel="noopener">auriel.co.in</a>
+      </div>
+      <div class="footer__sister">
+        <img src="assets/auriel-exim-logo.png" alt="Auriel Exim">
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>Auriel Exim — D 404 Devdeep Apartments, Koteshwar, Ahmedabad, Gujarat 380005</span>
+      <span>noel@auriel.co.in · support@auriel.co.in · support@valik.co.in · +91 85116 60881</span>
+    </div>
+    <div class="footer__bar">
+      <span>© 2026 Auriel Systems</span>
+      <span>Patent &amp; design applications filed 2026 — all rights reserved</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
