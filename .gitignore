@@ -6,5 +6,8 @@
 .vscode/
 .idea/
 
+# Build sources for generated assets (OG image, PDF one-pager)
+build/
+
 # Logs
 *.log
