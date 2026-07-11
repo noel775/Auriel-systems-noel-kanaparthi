@@ -235,10 +235,123 @@
       </div>
     </section>
 
-    <!-- 03 Performance -->
+    <!-- 03 The cooling system -->
+    <section class="section">
+      <div class="grid12" style="margin-bottom:44px">
+        <div class="col-3"><span class="eyebrow">Fig. 03 — The Cooling System</span></div>
+        <div class="col-4-8">
+          <h2 class="h2-sm" style="margin-bottom:22px">Not just a fan — a complete data-centre cooling architecture.</h2>
+          <p class="body">The hubless rim-driven fan is the core module. Around it, Auriel Systems has designed the full rack-and-row air-cooling system — hot-aisle containment, the airflow path, and heat rejection — so the efficiency gain compounds across the entire data hall.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--line);background:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),var(--paper-2);background-size:24px 24px,24px 24px,auto;padding:22px 26px 14px;">
+        <svg viewBox="0 0 1000 520" style="width:100%;height:auto;overflow:visible;font-family:'IBM Plex Mono',monospace;">
+          <defs>
+            <marker id="mkb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L9,5 L0,10 z" fill="#0A57D8"/></marker>
+            <marker id="mkr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L9,5 L0,10 z" fill="#A6321F"/></marker>
+          </defs>
+
+          <!-- ceiling return plenum -->
+          <rect x="175" y="40" width="640" height="42" fill="#A6321F" fill-opacity="0.05" stroke="#C9C3B0"/>
+          <text x="495" y="66" text-anchor="middle" font-size="11" fill="#736F62" letter-spacing="0.5">CEILING RETURN PLENUM</text>
+          <line x1="470" y1="61" x2="180" y2="61" stroke="#A6321F" stroke-width="1.4" marker-end="url(#mkr)"/>
+
+          <!-- raised-floor cold plenum -->
+          <rect x="175" y="438" width="640" height="42" fill="#0A57D8" fill-opacity="0.05" stroke="#C9C3B0"/>
+          <text x="500" y="464" text-anchor="middle" font-size="11" fill="#736F62" letter-spacing="0.5">RAISED-FLOOR COLD PLENUM</text>
+          <line x1="185" y1="459" x2="770" y2="459" stroke="#0A57D8" stroke-width="1.4" marker-end="url(#mkb)"/>
+
+          <!-- CRAH unit -->
+          <rect x="55" y="120" width="112" height="300" fill="none" stroke="#16150F" stroke-width="1.3"/>
+          <text x="111" y="112" text-anchor="middle" font-size="11" fill="#16150F" letter-spacing="1">CRAH</text>
+          <path d="M72,250 q10,-14 20,0 t20,0 t20,0" fill="none" stroke="#0A57D8" stroke-width="1.4"/>
+          <path d="M72,270 q10,-14 20,0 t20,0 t20,0" fill="none" stroke="#0A57D8" stroke-width="1.4"/>
+          <circle cx="111" cy="330" r="22" fill="none" stroke="#16150F" stroke-width="1"/>
+          <path d="M111,330 L128,330 M111,330 L102,315 M111,330 L102,345" stroke="#16150F" stroke-width="1"/>
+          <text x="111" y="392" text-anchor="middle" font-size="8.5" fill="#736F62">COIL + FAN</text>
+          <!-- CRAH loop connections -->
+          <line x1="111" y1="120" x2="111" y2="82" stroke="#A6321F" stroke-width="1.4" marker-start="url(#mkr)"/>
+          <line x1="111" y1="420" x2="111" y2="452" stroke="#0A57D8" stroke-width="1.4" marker-end="url(#mkb)"/>
+          <!-- heat rejection -->
+          <line x1="55" y1="165" x2="14" y2="165" stroke="#A6321F" stroke-width="1.4" marker-end="url(#mkr)"/>
+          <text x="60" y="150" font-size="8.5" fill="#A6321F">→ HEAT REJECTION · DRY COOLER (OUTDOOR)</text>
+
+          <!-- COLD AISLE L -->
+          <rect x="238" y="110" width="86" height="330" fill="#0A57D8" fill-opacity="0.07" stroke="#C9C3B0" stroke-dasharray="3 3"/>
+          <text x="281" y="500" text-anchor="middle" font-size="9" fill="#0A57D8">COLD AISLE</text>
+          <line x1="281" y1="436" x2="281" y2="150" stroke="#0A57D8" stroke-width="1.2" marker-end="url(#mkb)"/>
+          <text x="281" y="128" text-anchor="middle" font-size="8" fill="#0A57D8">≈22°C</text>
+
+          <!-- RACK A -->
+          <rect x="324" y="120" width="96" height="300" fill="#fff" fill-opacity="0.35" stroke="#16150F" stroke-width="1.2"/>
+          <g stroke="#C9C3B0" stroke-width="0.8">
+            <line x1="330" y1="150" x2="405" y2="150"/><line x1="330" y1="180" x2="405" y2="180"/><line x1="330" y1="210" x2="405" y2="210"/><line x1="330" y1="240" x2="405" y2="240"/><line x1="330" y1="270" x2="405" y2="270"/><line x1="330" y1="300" x2="405" y2="300"/><line x1="330" y1="330" x2="405" y2="330"/><line x1="330" y1="360" x2="405" y2="360"/><line x1="330" y1="390" x2="405" y2="390"/>
+          </g>
+          <text x="372" y="138" text-anchor="middle" font-size="8.5" fill="#736F62">SERVER RACK</text>
+          <!-- fan array A (rear) -->
+          <rect x="405" y="140" width="15" height="260" fill="#0A57D8" fill-opacity="0.1" stroke="#0A57D8" stroke-width="1.1"/>
+          <use href="#mf" x="412.5" y="165"/><use href="#mf" x="412.5" y="210"/><use href="#mf" x="412.5" y="255"/><use href="#mf" x="412.5" y="300"/><use href="#mf" x="412.5" y="345"/>
+          <!-- flow through rack A -->
+          <line x1="330" y1="285" x2="400" y2="285" stroke="#0A57D8" stroke-width="1.3" marker-end="url(#mkb)"/>
+          <line x1="422" y1="255" x2="450" y2="255" stroke="#A6321F" stroke-width="1.3" marker-end="url(#mkr)"/>
+
+          <!-- HOT AISLE (contained) -->
+          <rect x="452" y="82" width="96" height="358" fill="#A6321F" fill-opacity="0.08" stroke="#A6321F" stroke-dasharray="4 3"/>
+          <text x="500" y="500" text-anchor="middle" font-size="9" fill="#A6321F">HOT AISLE · CONTAINED</text>
+          <line x1="500" y1="430" x2="500" y2="92" stroke="#A6321F" stroke-width="1.3" marker-end="url(#mkr)"/>
+          <text x="500" y="418" text-anchor="middle" font-size="8" fill="#A6321F">≈40°C</text>
+
+          <!-- RACK B (mirror) -->
+          <rect x="580" y="120" width="96" height="300" fill="#fff" fill-opacity="0.35" stroke="#16150F" stroke-width="1.2"/>
+          <g stroke="#C9C3B0" stroke-width="0.8">
+            <line x1="595" y1="150" x2="670" y2="150"/><line x1="595" y1="180" x2="670" y2="180"/><line x1="595" y1="210" x2="670" y2="210"/><line x1="595" y1="240" x2="670" y2="240"/><line x1="595" y1="270" x2="670" y2="270"/><line x1="595" y1="300" x2="670" y2="300"/><line x1="595" y1="330" x2="670" y2="330"/><line x1="595" y1="360" x2="670" y2="360"/><line x1="595" y1="390" x2="670" y2="390"/>
+          </g>
+          <text x="628" y="138" text-anchor="middle" font-size="8.5" fill="#736F62">SERVER RACK</text>
+          <!-- fan array B (rear, faces hot aisle) -->
+          <rect x="580" y="140" width="15" height="260" fill="#0A57D8" fill-opacity="0.1" stroke="#0A57D8" stroke-width="1.1"/>
+          <use href="#mf" x="587.5" y="165"/><use href="#mf" x="587.5" y="210"/><use href="#mf" x="587.5" y="255"/><use href="#mf" x="587.5" y="300"/><use href="#mf" x="587.5" y="345"/>
+          <line x1="670" y1="285" x2="600" y2="285" stroke="#0A57D8" stroke-width="1.3" marker-end="url(#mkb)"/>
+          <line x1="578" y1="255" x2="550" y2="255" stroke="#A6321F" stroke-width="1.3" marker-end="url(#mkr)"/>
+
+          <!-- COLD AISLE R -->
+          <rect x="676" y="110" width="86" height="330" fill="#0A57D8" fill-opacity="0.07" stroke="#C9C3B0" stroke-dasharray="3 3"/>
+          <text x="719" y="500" text-anchor="middle" font-size="9" fill="#0A57D8">COLD AISLE</text>
+          <line x1="719" y1="436" x2="719" y2="150" stroke="#0A57D8" stroke-width="1.2" marker-end="url(#mkb)"/>
+          <text x="719" y="128" text-anchor="middle" font-size="8" fill="#0A57D8">≈22°C</text>
+
+          <!-- callout to fan array -->
+          <line x1="595" y1="210" x2="852" y2="210" stroke="#0A57D8" stroke-width="0.8" stroke-dasharray="2 3"/>
+          <circle cx="595" cy="210" r="3" fill="#0A57D8"/>
+          <rect x="852" y="176" width="140" height="70" fill="#0A57D8" fill-opacity="0.06" stroke="#0A57D8"/>
+          <text x="862" y="198" font-size="10" fill="#0A57D8" font-weight="600">HUBLESS RDF ARRAY</text>
+          <text x="862" y="214" font-size="8.5" fill="#16150F">Auriel core module —</text>
+          <text x="862" y="226" font-size="8.5" fill="#16150F">drives the entire</text>
+          <text x="862" y="238" font-size="8.5" fill="#16150F">airflow loop.</text>
+
+          <!-- minifan symbol -->
+          <defs>
+            <g id="mf">
+              <circle r="7" fill="#F4F1E8" stroke="#0A57D8" stroke-width="1"/>
+              <circle r="2.4" fill="none" stroke="#0A57D8" stroke-width="0.8"/>
+              <path d="M0,-7 A7,7 0 0,1 5,-5 M0,7 A7,7 0 0,1 -5,5 M7,0 A7,7 0 0,1 5,5" fill="none" stroke="#0A57D8" stroke-width="0.7"/>
+            </g>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- legend -->
+      <div style="display:flex;flex-wrap:wrap;gap:26px;margin-top:20px;font-family:var(--mono);font-size:11px;color:var(--muted)">
+        <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:22px;height:2px;background:var(--blue);display:inline-block"></span>Cold supply air ≈ 22 °C</span>
+        <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:22px;height:2px;background:var(--red);display:inline-block"></span>Hot return air ≈ 40 °C</span>
+        <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border:1.2px solid var(--blue);background:rgba(10,87,216,0.12);display:inline-block"></span>Hubless rim-driven fan array</span>
+      </div>
+    </section>
+
+    <!-- 04 Performance -->
     <section class="section">
       <div class="grid12" style="margin-bottom:52px">
-        <div class="col-3"><span class="eyebrow">Fig. 03 — Engineered Targets</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 04 — Engineered Targets</span></div>
         <h2 class="h2-sm col-4-8">Built to a standard slot. Tuned for a new benchmark.</h2>
       </div>
       <div class="metrics">
@@ -262,7 +375,7 @@
     <!-- 04 IP position -->
     <section class="section">
       <div class="grid12" style="margin-bottom:44px">
-        <div class="col-3"><span class="eyebrow">Fig. 04 — Protected Innovation</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 05 — Protected Innovation</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">Defensible from day one.</h2>
           <p class="body">The invention is protected on two fronts, filed at the Indian Patent Office and CGPDTM in June 2026 — securing an international priority date, with a clear roadmap to global coverage. Full technical specifications are held confidential.</p>
@@ -285,7 +398,7 @@
     <!-- 05 Roadmap -->
     <section class="section">
       <div class="grid12" style="margin-bottom:56px">
-        <div class="col-3"><span class="eyebrow">Fig. 05 — Roadmap</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 06 — Roadmap</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">From research to production — and we're building now.</h2>
           <p class="body">A clear line from a university thesis to hardware in test, and on to pilots and manufacturing at scale.</p>
@@ -328,7 +441,7 @@
     <!-- 06 Origins -->
     <section class="section section--alt">
       <div class="grid12">
-        <div class="col-3"><span class="eyebrow">Fig. 06 — Origins</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 07 — Origins</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">From a master's thesis at TU Munich to a filed patent.</h2>
           <p class="body" style="margin-bottom:24px">The aerodynamic foundations of this platform were laid during a master's thesis at the <strong style="color:var(--ink);font-weight:500">Technical University of Munich</strong>, in a joint programme with Nanyang Technological University, Singapore. Computational fluid-dynamics research into the cooling efficiency of axial fans first demonstrated the gains that the hubless rim-driven design now embodies in hardware.</p>
@@ -340,7 +453,7 @@
     <!-- 06 Strategic fit -->
     <section class="section">
       <div class="grid12" style="margin-bottom:52px">
-        <div class="col-3"><span class="eyebrow">Fig. 07 — Strategic Fit</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 08 — Strategic Fit</span></div>
         <div class="col-4-8">
           <h2 class="h2" style="margin-bottom:22px">A perfect fit for where the Adani Group is already building.</h2>
           <p class="body">This is deep-tech engineered in Gujarat, for the infrastructure India is scaling now — aligning directly with three of the Group's strategic frontiers.</p>
@@ -368,7 +481,7 @@
     <!-- 07 Beyond the rack -->
     <section class="section section--alt">
       <div class="grid12" style="margin-bottom:48px">
-        <div class="col-3"><span class="eyebrow">Fig. 08 — The Platform</span></div>
+        <div class="col-3"><span class="eyebrow">Fig. 09 — The Platform</span></div>
         <div class="col-4-8">
           <h2 class="h2-sm" style="margin-bottom:22px">One core technology. Many mission-critical markets.</h2>
           <p class="body">The hubless rim-driven core is a platform, not a single product. Wherever heat, reliability, and space collide, it applies.</p>
