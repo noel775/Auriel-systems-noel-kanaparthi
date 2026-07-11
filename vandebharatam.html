@@ -36,6 +36,21 @@
     .entrant-bar { position:relative; z-index:1; display:flex; justify-content:center; align-items:center; gap:11px; text-align:center; background:rgba(10,87,216,0.07); border-bottom:1px solid var(--line); padding:13px 24px; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); }
     .entrant-bar::before { content:"★"; font-size:11px; line-height:1; }
     @media (max-width:600px){ .entrant-bar{ font-size:9.5px; letter-spacing:0.08em; line-height:1.5; } }
+    .fin-table { width:100%; border-collapse:collapse; }
+    .fin-table th, .fin-table td { padding:10px 6px; border-bottom:1px solid var(--line); text-align:right; font-family:var(--mono); font-size:13px; font-variant-numeric:tabular-nums; }
+    .fin-table th { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--line-2); }
+    .fin-table td:first-child, .fin-table th:first-child { text-align:left; }
+    .fin-table td.neg { color:var(--muted); }
+    .fin-table tr.tv td { color:var(--muted); }
+    .fin-table tr.npv td { border-top:1.5px solid var(--ink); border-bottom:none; padding-top:13px; font-size:15px; font-weight:600; color:var(--ink); }
+    .fin-table tr.npv td:last-child { color:var(--blue); }
+    .ask { border:1.5px solid var(--blue); background:rgba(10,87,216,0.05); padding:34px 36px; }
+    .ask__ey { display:flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
+    .ask__ey::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); animation:pulse 1.9s ease-in-out infinite; }
+    .ask__amt { font-family:var(--serif); font-weight:400; font-size:clamp(34px,4.2vw,52px); letter-spacing:-0.02em; line-height:1; margin-bottom:16px; }
+    .ask__amt span { font-size:0.42em; color:var(--muted); letter-spacing:0; }
+    .ask p { font-size:16px; line-height:1.6; color:var(--ink-soft); max-width:680px; margin:0 0 20px; }
+    @media (max-width:600px){ .ask{ padding:26px 22px; } }
     .badge--live { border-color:var(--blue); background:rgba(10,87,216,0.06); color:var(--blue); }
     .badge--live::before { background:var(--blue); animation:pulse 1.9s ease-in-out infinite; }
     @keyframes pulse {
@@ -528,50 +543,37 @@
         <div class="metric"><div class="metric__num">~$450<span class="u">M</span></div><div class="metric__label">Our FY33 revenue target — just ~5% of the high-density fan segment</div></div>
       </div>
 
-      <div class="eyebrow" style="margin:46px 0 18px">Financial Trajectory — Management Projections</div>
-      <div class="grid12" style="align-items:center;row-gap:40px">
-        <!-- revenue ramp chart -->
+      <div class="eyebrow" style="margin:46px 0 18px">Five-Year Plan — NPV Basis · ₹ Crore</div>
+      <div class="grid12" style="align-items:start;row-gap:36px">
+        <!-- 5-year DCF / NPV table -->
         <div style="grid-column:1 / span 7">
-          <svg viewBox="0 0 660 300" style="width:100%;height:auto;overflow:visible;font-family:'IBM Plex Mono',monospace">
-            <text x="0" y="20" font-size="10" fill="#736F62" letter-spacing="0.5">REVENUE · ₹ CRORE</text>
-            <line x1="30" y1="250" x2="640" y2="250" stroke="#16150F" stroke-width="1"/>
-            <g>
-              <rect x="40"  y="247" width="46" height="3"   fill="#0A57D8" fill-opacity="0.30"/>
-              <rect x="126" y="246" width="46" height="4"   fill="#0A57D8" fill-opacity="0.36"/>
-              <rect x="212" y="239" width="46" height="11"  fill="#0A57D8" fill-opacity="0.44"/>
-              <rect x="298" y="226" width="46" height="24"  fill="#0A57D8" fill-opacity="0.55"/>
-              <rect x="384" y="192" width="46" height="58"  fill="#0A57D8" fill-opacity="0.70"/>
-              <rect x="470" y="134" width="46" height="116" fill="#0A57D8" fill-opacity="0.85"/>
-              <rect x="556" y="50"  width="46" height="200" fill="#0A57D8"/>
-            </g>
-            <g font-size="10" fill="#16150F" text-anchor="middle">
-              <text x="63"  y="240">15</text>
-              <text x="149" y="238">60</text>
-              <text x="235" y="231">200</text>
-              <text x="321" y="218">450</text>
-              <text x="407" y="184">1,100</text>
-              <text x="493" y="126">2,200</text>
-              <text x="579" y="42" font-weight="600" fill="#0A57D8">3,800</text>
-            </g>
-            <g font-size="10" fill="#736F62" text-anchor="middle">
-              <text x="63" y="268">FY27</text><text x="149" y="268">FY28</text><text x="235" y="268">FY29</text><text x="321" y="268">FY30</text><text x="407" y="268">FY31</text><text x="493" y="268">FY32</text><text x="579" y="268">FY33</text>
-            </g>
-            <text x="335" y="292" text-anchor="middle" font-size="9" fill="#736F62">Pilot → Scale → Gigafactory · illustrative ramp</text>
-          </svg>
+          <table class="fin-table">
+            <thead><tr><th>Fiscal Year</th><th>Revenue</th><th>Free Cash Flow</th><th>PV @ 30%</th></tr></thead>
+            <tbody>
+              <tr><td>FY27 · Pilot</td><td>15</td><td class="neg">(25)</td><td class="neg">(19)</td></tr>
+              <tr><td>FY28</td><td>60</td><td class="neg">(35)</td><td class="neg">(21)</td></tr>
+              <tr><td>FY29 · Scale</td><td>200</td><td class="neg">(120)</td><td class="neg">(55)</td></tr>
+              <tr><td>FY30</td><td>450</td><td>20</td><td>7</td></tr>
+              <tr><td>FY31 · FCF+</td><td>1,100</td><td>180</td><td>48</td></tr>
+              <tr class="tv"><td>Terminal value <span style="opacity:.7">(g 8%)</span></td><td>—</td><td>—</td><td>238</td></tr>
+              <tr class="npv"><td>Net Present Value</td><td></td><td></td><td>~200</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:12px;font-family:var(--mono);font-size:10px;color:var(--muted)">5-yr DCF · 30% discount rate · trajectory extends to ~₹3,800 Cr revenue by FY33</div>
         </div>
         <!-- financial pointers -->
-        <div style="grid-column:9 / span 4;display:flex;flex-direction:column;gap:26px">
+        <div style="grid-column:9 / span 4;display:flex;flex-direction:column;gap:24px">
           <div>
-            <div class="stat" style="font-size:clamp(34px,3.4vw,46px)">~110%</div>
-            <div class="stat__label" style="margin-top:8px">Revenue CAGR · FY27–FY33</div>
+            <div class="stat" style="font-size:clamp(38px,4vw,54px)">~₹200<span style="font-size:0.4em;color:var(--muted)"> Cr</span></div>
+            <div class="stat__label" style="margin-top:8px">Project NPV @ 30% (~$24M)</div>
           </div>
           <div>
             <div class="stat" style="font-size:clamp(34px,3.4vw,46px)">FY31</div>
             <div class="stat__label" style="margin-top:8px">Free-cash-flow positive</div>
           </div>
           <div>
-            <div class="stat" style="font-size:clamp(34px,3.4vw,46px)">₹1,075<span style="font-size:0.42em;color:var(--muted)"> Cr</span></div>
-            <div class="stat__label" style="margin-top:8px">Phased CAPEX to a cooling gigafactory (~$130M)</div>
+            <div class="stat" style="font-size:clamp(34px,3.4vw,46px)">₹1,100<span style="font-size:0.42em;color:var(--muted)"> Cr</span></div>
+            <div class="stat__label" style="margin-top:8px">Revenue in year 5 (FY31)</div>
           </div>
           <div>
             <div class="stat" style="font-size:clamp(34px,3.4vw,46px)">~42%</div>
@@ -590,7 +592,27 @@
             <span class="pill">Phase III · Cooling gigafactory — ₹850 Cr · FY32</span>
           </div>
           <p class="body" style="margin-top:26px">Win the 80&nbsp;mm slot and you win the rack, the row, the hall — and the hangar. Every efficiency point compounds into gigawatts saved and a category we define, manufacture, and defend from Gujarat.</p>
-          <p style="margin-top:24px;font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--muted);max-width:640px">Figures are illustrative management projections prepared for the Vande Bharatam submission — not audited results, financial advice, or an offer of securities. Market sizes are directional industry estimates.</p>
+        </div>
+      </div>
+
+      <!-- Pre-seed ask -->
+      <div class="grid12" style="margin-top:48px">
+        <div class="col-3"><span class="eyebrow eyebrow--blue">The Ask · Pre-Seed</span></div>
+        <div class="col-4-8">
+          <div class="ask">
+            <div class="ask__ey">Pre-Seed Round · Open Now</div>
+            <div class="ask__amt">Raising ₹6 Cr <span>(~$720K)</span></div>
+            <p>An 18-month runway to a fully validated prototype, first pilot-batch units, completed patent + PCT / Hague filings, and design-partner LOIs — de-risking the Phase&nbsp;I pilot line and setting up a Series&nbsp;A from a position of strength.</p>
+            <div class="pill-row" style="margin-bottom:24px">
+              <span class="pill">Prototype → Pilot · 40%</span>
+              <span class="pill">IP · Complete spec + PCT / Hague · 25%</span>
+              <span class="pill">Founding team · 20%</span>
+              <span class="pill">Operations · 15%</span>
+            </div>
+            <a class="link-underline" href="contact.html"><span class="lu-line"></span>Request the investor data room</a>
+            <div style="margin-top:16px;font-family:var(--mono);font-size:10.5px;color:var(--muted)">Instrument: SAFE / convertible note · pre-seed</div>
+          </div>
+          <p style="margin-top:28px;font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--muted);max-width:640px">Figures are illustrative management projections for the Vande Bharatam submission. NPV is a five-year DCF (FY27–FY31 free cash flow plus a terminal value, g&nbsp;8%) discounted at 30% — not audited results, financial advice, or an offer of securities. Market sizes are directional industry estimates.</p>
         </div>
       </div>
     </section>
