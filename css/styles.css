@@ -279,6 +279,63 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; }
 }
 .ph-img__cross { position: absolute; top: 12px; right: 12px; opacity: 0.5; }
 
+/* ---------- product diagrams (animated blueprint illustrations) ---------- */
+.pd-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+
+@keyframes pdPulse {
+  0%, 100% { opacity: 0.35; r: 3.2; }
+  50%      { opacity: 1;    r: 5;   }
+}
+@keyframes pdPulseSoft {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1;   }
+}
+@keyframes pdFlow {
+  to { stroke-dashoffset: -24; }
+}
+@keyframes pdFlowRev {
+  to { stroke-dashoffset: 24; }
+}
+@keyframes pdScan {
+  0%   { transform: translateY(0);    opacity: 0; }
+  8%   { opacity: 0.9; }
+  92%  { opacity: 0.9; }
+  100% { transform: translateY(216px); opacity: 0; }
+}
+@keyframes pdBar {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1);    }
+}
+@keyframes pdBlink {
+  0%, 45%  { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+@keyframes pdType {
+  from { opacity: 0; transform: scaleX(0.4); }
+  to   { opacity: 1; transform: scaleX(1);   }
+}
+@keyframes pdOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.pd-node        { animation: pdPulse 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.pd-node--soft   { animation: pdPulseSoft 3.2s ease-in-out infinite; }
+.pd-flow         { stroke-dasharray: 5 7; animation: pdFlow 1.6s linear infinite; }
+.pd-flow--rev     { stroke-dasharray: 5 7; animation: pdFlowRev 1.9s linear infinite; }
+.pd-scan         { animation: pdScan 3.4s ease-in-out infinite; }
+.pd-bar          { animation: pdBar 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.pd-blink        { animation: pdBlink 1.1s steps(1) infinite; }
+.pd-type         { animation: pdType 0.5s var(--ease) both; transform-box: fill-box; transform-origin: left center; }
+.pd-orbit        { animation: pdOrbit 7s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-node, .pd-node--soft, .pd-flow, .pd-flow--rev, .pd-scan, .pd-bar, .pd-blink, .pd-type, .pd-orbit {
+    animation: none !important;
+  }
+}
+
 /* ---------- data rows (capabilities / journey) ---------- */
 .row {
   position: relative;
